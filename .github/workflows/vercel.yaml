@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Debug - Check if secrets exist
+        shell: powershell
+        run: |
+          if ("${{ secrets.VERCEL_TOKEN }}" -eq '') { Write-Error "VERCEL_TOKEN is empty" }
+
       - name: Install Vercel CLI
         run: npm install -g vercel
 
