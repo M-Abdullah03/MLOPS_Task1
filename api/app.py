@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Deploying Flask App at Vercel"
+    return "Deploying Flask App at Vercel through git actions"
 
 @app.route('/about')
 def about():
